@@ -1,4 +1,4 @@
-# First attempt at a raw no library NN
+# First attempt at a raw no libraries at all NN
 from csv import reader
 from math import exp
 from random import random, sample
