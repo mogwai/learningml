@@ -42,21 +42,27 @@ for j in range(len(data)):
     data[j] = list(map(float, row))
 
 
-idx = np.random.randint(len(data), size=50)
+np.random.seed(1)
+idx = np.random.randint(len(data), size=100)
 X = np.array(data)[idx, :]
 y = np.array([out]).T[idx, :]
-np.random.seed(1)
 
 # randomly initialize our weights with mean 0
-syn0 = np.random.random((4, 8))
-syn1 = np.random.random((8, 3))
+syn0 = 2*np.random.random((4, 5))-1
+syn1 = 2*np.random.random((5, 5))-1
+syn2 = 2*np.random.random((5, 3))-1
 
+print("syn0\n")
+print(syn0)
+print("syn1\n")
+print(syn1)
 for j in range(9999999):
 
     # Feed forward through layers 0, 1, and 2
     l0 = X
     l1 = sig(np.dot(l0, syn0))
     l2 = sig(np.dot(l1, syn1))
+    # l3 = sig(np.dot(l2, syn2))
 
     # how much did we miss the target value?
     l2_error = y - l2
@@ -66,14 +72,16 @@ for j in range(9999999):
 
     # in what direction is the target value?
     # were we really sure? if so, don't change too much.
-    l2_delta = l2_error*sig(l2, True)
 
-    # how much did each l1 value contribute to the l2 error (according to the weights)?
+    # l3_delta = l3_error * sig(l3, True)*LEARNING_RATE
+    # l2_error = l3_delta.dot(syn2.T)
+
+    l2_delta = l2_error*sig(l2, True)*LEARNING_RATE
     l1_error = l2_delta.dot(syn1.T)
 
     # in what direction is the target l1?
     # were we really sure? if so, don't change too much.
-    l1_delta = l1_error * sig(l1, True)
+    l1_delta = l1_error * sig(l1, True)*LEARNING_RATE
 
     syn1 += l1.T.dot(l2_delta)
     syn0 += l0.T.dot(l1_delta)
