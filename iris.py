@@ -10,7 +10,7 @@ def sig(x, deriv=False):
     return 1/(1+np.exp(-x))
 
 
-LEARNING_RATE = 0.1
+LEARNING_RATE = 0.01
 
 
 def load_csv():
@@ -43,20 +43,21 @@ for j in range(len(data)):
 
 
 np.random.seed(1)
-idx = np.random.randint(len(data), size=100)
+idx = np.random.randint(len(data), size=120)
 X = np.array(data)[idx, :]
 y = np.array([out]).T[idx, :]
 
 # randomly initialize our weights with mean 0
 syn0 = 2*np.random.random((4, 5))-1
 syn1 = 2*np.random.random((5, 5))-1
-syn2 = 2*np.random.random((5, 3))-1
+
+# syn2 = 2*np.random.random((5, 3))-1
 
 print("syn0\n")
 print(syn0)
 print("syn1\n")
 print(syn1)
-for j in range(9999999):
+for j in range(10000*20):
 
     # Feed forward through layers 0, 1, and 2
     l0 = X
