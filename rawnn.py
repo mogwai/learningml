@@ -1,8 +1,6 @@
-# First attempt at a raw no libraries at all NN
 from csv import reader
 from math import exp
 from random import random, sample
-
 
 LEARNING_RATE = 0.1
 

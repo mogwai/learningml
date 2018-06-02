@@ -1,5 +1,6 @@
 import numpy as np
 
+# https://iamtrask.github.io/2015/07/12/basic-python-network/
 
 def nonlin(x, deriv=False):
     if(deriv == True):

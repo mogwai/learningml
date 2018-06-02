@@ -1,1 +1,1 @@
-[Hand Written Digits - MNIST](http://yann.lecun.com/exdb/mnist/)
+[Hand Written Digits - MNIST](http://yann.lecun.com/exdb/mnist/) 

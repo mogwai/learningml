@@ -19,5 +19,4 @@ for i in range(60000):
     syn1 += l1.T.dot(l2_delta)
     syn0 += X.T.dot(l1_delta)
 
-
 print("Finished")
