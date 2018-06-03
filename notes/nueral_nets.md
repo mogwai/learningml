@@ -12,3 +12,5 @@
 #### Books
 - [Michael Nielsen - Nueral Networks and Deep Learning](http://neuralnetworksanddeeplearning.com) 
  
+### Courses
+- [Standford - Convolutional Neural Networks for Visual Recognition](https://cs231n.github.io/)
