@@ -15,7 +15,7 @@ LEARNING_RATE = 0.01
 
 def load_csv():
     data = []
-    with open("./data/iris.csv", 'r') as csvfile:
+    with open("../../data/iris.csv", 'r') as csvfile:
         r = reader(csvfile)
         for row in r:
             data.append(row)
